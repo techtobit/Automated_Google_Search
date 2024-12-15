@@ -7,8 +7,6 @@ def insertDataInDB(self, urls):
 			connection = Connection.MySQLConnection()
 			cursor= connection.cursor()
 
-			print('DB URLS', urls)
-
 			for url in urls:
 				cursor.execute("INSERT INTO search_results (url) VALUES (%s)", (url,))
 				connection.commit()
