@@ -1,6 +1,7 @@
 from Google_Search import GSearch
 
 action = GSearch.Search()
-action.gSarch('python')
-action.getResult()
+action.gSarch('VS CODE')
+result = action.getResult()
+action.saveResult(result)
 action.closeBrowser()

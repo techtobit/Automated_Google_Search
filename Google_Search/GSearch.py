@@ -6,6 +6,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC 
 from selenium.webdriver.common.by import By
+from MySql import MySQL_DB
+
 import time
 import re
 
@@ -13,19 +15,19 @@ import re
 
 class Search:
 	def __init__(self):
-		user_agent = UserAgent()
-		user_string = user_agent.random
-		options = webdriver.ChromeOptions()
-		options.add_argument(f'user-agent={user_string}')
-		options.add_argument("--headless")
-		options.add_argument("--disable-gpu")
-		options.add_argument("--no-sandbox")
+		# user_agent = UserAgent()
+		# user_string = user_agent.random
+		# options = webdriver.ChromeOptions()
+		# options.add_argument(f'user-agent={user_string}')
+		# options.add_argument("--headless")
+		# options.add_argument("--disable-gpu")
+		# options.add_argument("--no-sandbox")
 
-		self.browser=webdriver.Chrome(options=options)
-		set_driver(self.browser)
+		# self.browser=webdriver.Chrome(options=options)
+		# set_driver(self.browser)
 
 		# Use Helium 
-		# self.browser = start_chrome(headless=True)
+		self.browser = start_chrome(headless=True)
 
 	def gSarch(self,keyword):
 		go_to("https://www.google.com")
@@ -45,6 +47,10 @@ class Search:
 			if match:
 					urls.append(match.group(0)) 
 		print(urls)
+		return urls
+	
+	def saveResult(self, urls):
+		MySQL_DB.insertDataInDB(self, urls)
 
 	def closeBrowser(self):
 		kill_browser()
