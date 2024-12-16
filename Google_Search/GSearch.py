@@ -14,7 +14,7 @@ import re
 
 
 class Search:
-	def __init__(self):
+	def __init__(self, keyword):
 		# user_agent = UserAgent()
 		# user_string = user_agent.random
 		# options = webdriver.ChromeOptions()
@@ -27,12 +27,14 @@ class Search:
 		# set_driver(self.browser)
 
 		# Use Helium 
+		self.keyword=keyword
 		self.browser = start_chrome(headless=True)
+		
 
-	def gSarch(self,keyword):
+	def gSarch(self):
 		go_to("https://www.google.com")
 		search_box = find_all(S("textarea[name='q']"))[0]
-		write(keyword, into=search_box)
+		write(self.keyword, into=search_box)
 		press(ENTER)
 		time.sleep(5)
 
@@ -55,7 +57,7 @@ class Search:
 			print(f'Failed to find elements or result. {e}')
 	
 	def saveResult(self, urls):
-		MySQL_DB.insertDataInDB(self, urls)
+		MySQL_DB.insertDataInDB(urls, self.keyword)
 
 	def closeBrowser(self):
 		kill_browser()

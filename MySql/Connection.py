@@ -14,8 +14,9 @@ def MySQLConnection():
 			create_table_query = """
         CREATE TABLE IF NOT EXISTS search_results (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            url TEXT NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+						keyword TEXT NOT NULL,
+            url TEXT NOT NULL
         );
         """
 			cursor.execute(create_table_query)

@@ -2,13 +2,19 @@ from MySql import Connection
 import mysql.connector
 
 
-def insertDataInDB(self, urls):
+def insertDataInDB(urls, keyword):
 		try:
+			print(keyword)
 			connection = Connection.MySQLConnection()
 			cursor= connection.cursor()
 
 			for url in urls:
-				cursor.execute("INSERT INTO search_results (url) VALUES (%s)", (url,))
+				insert_stm= (
+						"INSERT INTO search_results (keyword, url)"
+						"VALUES (%s, %s)"
+						)
+				data = (keyword, url)
+				cursor.execute(insert_stm, data)
 				connection.commit()
 				print("URLs saved successfully!")
 		except Exception as e:
