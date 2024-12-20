@@ -5,8 +5,8 @@ def MySQLConnection():
 			connection=mysql.connector.connect(
 				host= 'sql.freedb.tech',
 				port= '3306',
-				username= 'freedb_ashrafuddin27',
-				password= 'D5%%mbk8rk%D2u9',
+				username= 'freedb_ashrafuddin',
+				password= 'U4*CBKnew*2M7ww',
 				database= 'freedb_ags_db',
 			)
 
