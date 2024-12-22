@@ -15,7 +15,6 @@ def insertDataInDB(urls, keyword):
 			worksheet.write(0,0, 'Keyword')
 			worksheet.write(0,1, 'URL')
 
-			
 
 			for row_num, url in enumerate (urls, start=1):
 				insert_stm= (
