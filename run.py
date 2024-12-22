@@ -1,7 +1,7 @@
 from Google_Search import GSearch
 
 # keyword = input('Write the keyword : ')
-keyword = 'GEEPAS'
+keyword = 'BTS'
 action = GSearch.Search(keyword)
 action.gSarch()
 result = action.getResult()

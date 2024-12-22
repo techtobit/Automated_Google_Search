@@ -28,7 +28,7 @@ class Search:
 
 		# Use Helium 
 		self.keyword=keyword
-		self.browser = start_chrome(headless=True)
+		self.browser = start_chrome(headless=False)
 		
 
 	def gSarch(self):
