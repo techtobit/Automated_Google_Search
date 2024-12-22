@@ -15,20 +15,20 @@ import re
 
 class Search:
 	def __init__(self, keyword):
-		# user_agent = UserAgent()
-		# user_string = user_agent.random
-		# options = webdriver.ChromeOptions()
-		# options.add_argument(f'user-agent={user_string}')
-		# options.add_argument("--headless")
-		# options.add_argument("--disable-gpu")
-		# options.add_argument("--no-sandbox")
+		self.keyword=keyword
 
-		# self.browser=webdriver.Chrome(options=options)
+		# ----------for windows user
+		# options = webdriver.ChromeOptions()
+		# options.add_argument("--headless")
+		# service = Service(r"C:\webdriver\chromedriver.exe")
+		# self.browser = webdriver.Chrome(options=options, service=service)
 		# set_driver(self.browser)
 
+
+
 		# Use Helium 
-		self.keyword=keyword
-		self.browser = start_chrome(headless=True)
+		# -----------for linux user
+		self.browser = start_chrome(headless=False)
 		
 
 	def gSarch(self):
