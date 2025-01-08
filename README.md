@@ -12,6 +12,7 @@ The primary use case is to allow users to set up Google search queries, track th
 - Automatically updates instances and creates shortcuts.
 - Provides a user-friendly interface for search customization.
 - Reporting functionality to track instance activity and results.
+- 
 
 ## Watch the video
 [![Overview](https://i.ibb.co.com/877NX7z/17b7b56c-35f9-4f4b-a982-1280c030c709.jpg)](https://youtu.be/zcPqEFL7bn0?si=jLAPjUj9O_NSK7Fl)
